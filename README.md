@@ -7,7 +7,7 @@ DiscordBot is a work in progress if pepole wants to use this they can just rembe
 6. https://www.npmjs.com/package/minecraft-server-util
 7. https://www.npmjs.com/package/images-scraper
 8. npm i random-puppy
-9. 
+9. remove some help commands as they don't exsist your self 
 
 
 Contact me on Discord if you have anny problems: Jonas_#9733
