@@ -7,7 +7,7 @@ module.exports = {
         .setTitle('Er casper homo?')
         .setURL('')
         .addFields(
-            {name: 'JA CASPER ER GAY', value: 'BTW HAN ER OGSÅ MONGO'},
+            {name: 'Hvis du lurer på dette får du vell spøre selv da', value: 'Ring han TLF: 004792080393'},
 
         )
         .setImage('https://cdn.discordapp.com/attachments/829056628875067432/852926206529372170/image0.png')

@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 require('dotenv').config();
 const client = new Discord.Client();
+const mongoose = require("mongoose")
+
+const memberCounter = require('C:/Users/Jonas Forsberg/Desktop/Discordbot/counters/member-counter');
+
 
 prefix = '?'
 
@@ -14,7 +18,27 @@ client.events = new Discord.Collection();
 })
 
 client.once('ready', () => {
-    client.user.setActivity('Using prefix ? Made by Jonas');
+    memberCounter(client);
+    
+
+    const arrayOfStatus = [
+        ` Over ${client.guilds.cache.size} servers!`,
+        ` Using prefix ? `,
+        ` Made by Jonas_#9733`,
+        ` Make sure to join Tha BET https://discord.gg/VueJNuSXhY`,
+        `?help`,
+        `http://jonasnett.c1.biz/`
+
+
+    ];
+    let index = 0;
+    setInterval(() => {
+        if(index === arrayOfStatus.length) index = 0;
+        const status = arrayOfStatus[index];
+        client.user.setActivity(status, { type: "WATCHING"}).catch(console.error)
+        index++;
+    }, 15000) //in ms
+   
 });
 
 client.on('guildMemberAdd', member =>{
@@ -47,21 +71,23 @@ client.on('message', message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+   
+    
     if (command === 'suggest') {
         client.commands.get('suggestions').execute(client, message, cmd, args, Discord);
     } else if (command === 'play') {
         client.commands.get('play').execute(message, args);
-    } else if (command === 'leave') {
-        client.commands.get('leave').execute(message, args);
     } else if (command === 'clear') {
         client.commands.get('clear').execute(message, args);
     } else if (command === 'mute') {
         client.commands.get('mute').execute(message, args);
     } else if (command === 'unmute') {
         client.commands.get('unmute').execute(message, args);
-    } else if (command === 'fuckoff') {
-        client.commands.get('leave').execute(message, args);
-    }
+    } else if (command === 'clear') {
+        client.commands.get('clear').execute(message, args);
+    } else if (command === 'meme') {
+        client.commands.get('meme').execute(message, args);
+    } 
 
 
   
