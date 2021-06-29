@@ -3,7 +3,7 @@ require('dotenv').config();
 const client = new Discord.Client();
 const mongoose = require("mongoose")
 
-const memberCounter = require('C:/Users/Jonas Forsberg/Desktop/Discordbot/counters/member-counter');
+const memberCounter = require('./counters/member-counter');
 
 
 prefix = '?'
